@@ -15,10 +15,11 @@ using namespace std;
 #define PAUSE system("pause")
 #define ENDL cout<<endl
 
+
 int main() {
 	setlocale(LC_CTYPE, "");
 	srand(time(0));
-
+	//init();
 	addVictorunu();
 	showVictorunu();
 	system("pause");

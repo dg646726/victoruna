@@ -1,3 +1,3 @@
 ﻿  Source.cpp
-D:\Visual Studio\Вікторина\Вікторина\Source.cpp(20,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\Visual Studio\Вікторина\Вікторина\Source.cpp(21,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   Вікторина.vcxproj -> D:\Visual Studio\Вікторина\Debug\Вікторина.exe

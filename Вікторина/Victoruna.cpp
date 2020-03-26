@@ -18,65 +18,81 @@ HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
 Victoruna* victorunu;
 int countVictorun = 0;
 
-//void init()
-//{
-//	ifstream fin;
-//	fin.open("Quiz.txt");
-//	bool isOpen = fin.is_open();
-//
-//	if (isOpen == false) {
-//		cout << "Error" << endl;
-//	}
-//	else {
-//		int currentString = 0;
-//		string data;
-//		while (!fin.eof()) {
-//			currentString++;
-//
-//			getline(fin, data);
-//			if (currentString == 1) {
-//
-//			}
-//			else if (currentString == 2) {
-//
-//			}
-//			else if (currentString == 3) {
-//
-//			}
-//			else if (currentString == 4) {
-//
-//			}
-//			else if (currentString == 5) {
-//
-//			}
-//			else if (currentString == 6) {
-//
-//			}
-//			else if (currentString == 7) {
-//
-//			}
-//			else if (currentString == 8) {
-//
-//			}
-//			else if (currentString == 9) {
-//
-//			}
-//			else if (currentString == 10) {
-//
-//			}
-//			else if (currentString == 11) {
-//
-//			}
-//			else {
-//				
-//				old_data.password = data;
-//				currentString = 0;
-//				login_details.push_back(old_data);
-//				old_data = LoginDetails();
-//			}
-//		}
-//	}
-//}
+void init()
+{
+	ifstream fin;
+	fin.open("Quiz.txt");
+	bool isOpen = fin.is_open();
+
+	if (isOpen == false) {
+		cout << "Error" << endl;
+	}
+	else {
+		int currentString = 0;
+		string data; 
+		Victoruna oldInformation;
+		int k = 0;
+		oldInformation.zaputannya = new Putanya[5];
+		while (!fin.eof()) {
+			
+			currentString++;
+			getline(fin, data);
+			if (currentString == 1) {
+				oldInformation.name = data;
+			}
+			else if (currentString == 2) {
+				oldInformation.zaputannya[k].question = data;
+				
+			}
+			else if (currentString == 3) {
+				oldInformation.zaputannya[k].answer = data;
+				k++;
+			}
+			else if (currentString == 4) {
+				oldInformation.zaputannya[k].question = data;
+				
+			}
+			else if (currentString == 5) {
+				oldInformation.zaputannya[k].answer = data;
+				k++;
+			}
+			else if (currentString == 6) {
+				oldInformation.zaputannya[k].question = data;
+				
+			}
+			else if (currentString == 7) {
+				oldInformation.zaputannya[k].answer = data;
+				k++;
+			}
+			else if (currentString == 8) {
+				oldInformation.zaputannya[k].question = data;
+				
+			}
+			else if (currentString == 9) {
+				oldInformation.zaputannya[k].answer = data;
+				k++;
+			}
+			else if (currentString == 10) {
+				oldInformation.zaputannya[k].question = data;
+				
+			}
+			else {
+				oldInformation.zaputannya[k].answer = data;
+				
+				currentString = 0;
+				k = 0;
+				Victoruna* temp = new Victoruna[countVictorun + 1];
+				for (int i = 0; i < countVictorun; i++)
+				{
+					temp[i] = victorunu[i];
+				}
+				temp[countVictorun] = oldInformation;
+				countVictorun++;
+				victorunu = temp;
+			}
+		}
+	}
+}
 
 void addVictorunu()
 {
