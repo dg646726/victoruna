@@ -32,7 +32,6 @@ void init()
 		string data; 
 		Victoruna oldInformation;
 		int k = 0;
-		oldInformation.zaputannya = new Putanya[5];
 		while (!fin.eof()) {
 			
 			currentString++;
@@ -88,7 +87,12 @@ void init()
 				}
 				temp[countVictorun] = oldInformation;
 				countVictorun++;
-				victorunu = temp;
+				victorunu = new Victoruna[countVictorun];
+				for (int i = 0; i < countVictorun; i++)
+				{
+					victorunu[i] = temp[i];
+				}
+				delete[]temp;
 			}
 		}
 	}
@@ -109,7 +113,6 @@ void addVictorunu()
 		cout << "Enter name victorunu:";
 		cin >> temp[countVictorun].name;
 
-		temp[countVictorun].zaputannya = new Putanya[5];
 		for (int i = 0; i < 5; i++)
 		{
 			cout << "Enter question"<<i+1<<"/5:";
@@ -128,8 +131,12 @@ void addVictorunu()
 		
 		fout.close();
 		countVictorun++;
-		delete victorunu;
-		victorunu = temp;
+		victorunu = new Victoruna[countVictorun];
+		for (int i = 0; i < countVictorun; i++)
+		{
+			victorunu[i] = temp[i];
+		}
+		delete[]temp;
 	}
 	else {
 		cout << "Error: file not open." << endl;
@@ -141,10 +148,11 @@ void showVictorunu()
 	cout << "List victorun:" << endl;
 	for (int i = 0; i < countVictorun; i++)
 	{
-		cout << victorunu[i].name << endl;
+		cout <<i+1<<"."<< victorunu[i].name << endl;
 	}
+	ENDL;
 	string output;
-	cout << "Enter name victorunu to which you want to answer:";
+	cout << "Enter name victorunu to which you want to pass:";
 	cin >> output;
 	string correctAnswer;
 	int countCorrectAnswer = 0;

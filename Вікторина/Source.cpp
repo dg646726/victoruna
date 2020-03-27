@@ -19,9 +19,32 @@ using namespace std;
 int main() {
 	setlocale(LC_CTYPE, "");
 	srand(time(0));
-	//init();
-	addVictorunu();
-	showVictorunu();
+
+	init();
+	int action = 0;
+
+	do {
+
+		cout << "1.Add new quiz" << endl;
+		cout << "2.Show and pass quiz" << endl;
+		cout << "3.Exit" << endl;
+		ENDL;
+		cout << "Select action:";
+		cin >> action;
+		switch (action) {
+		case 1:
+			addVictorunu();
+			break;
+		case 2:
+			showVictorunu();
+			break;
+		case 3:
+			cout << "Goodbye" << endl;
+			break;
+		default:
+			cout << "Error" << endl;
+		}
+	} while (action != 3);
 	system("pause");
 	return 0;
 }

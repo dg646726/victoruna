@@ -14,7 +14,7 @@ struct Putanya {
 struct Victoruna{
 
 	string name;
-	Putanya* zaputannya;
+	Putanya zaputannya[5];
 };
 
 void init();
